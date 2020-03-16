@@ -14,10 +14,13 @@ struct OSC_API IOscReceiverInterface
 
 /// Forward calls to an impl object.
 template <class T>
+#if PLATFORM_WINDOWS
+struct BasicOscReceiver : IOscReceiverInterface
+#else
 struct OSC_API BasicOscReceiver : IOscReceiverInterface
+#endif
 {
     T * const _impl;
-
     BasicOscReceiver(T * impl) : _impl(impl)
     {
     }
