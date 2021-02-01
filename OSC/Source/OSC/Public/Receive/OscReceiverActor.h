@@ -7,7 +7,7 @@
 
 
 UCLASS(ClassGroup=OSC)
-class OSC_API AOscReceiverActor : public AActor
+class UE4OSC_API AOscReceiverActor : public AActor
 {
     GENERATED_BODY()
 

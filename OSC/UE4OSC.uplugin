@@ -1,7 +1,7 @@
 {
 	"FileVersion" : 3,
 	
-	"FriendlyName" : "OSC",
+	"FriendlyName" : "UE4OSC",
 	"Version" : 1,
 	"VersionName" : "1.0",
 	"CreatedBy" : "Guillaume Buisson",
@@ -13,7 +13,7 @@
 	"Modules" :
 	[
 		{
-			"Name" : "OSC",
+			"Name" : "UE4OSC",
 			"Type" : "Runtime",
 			"LoadingPhase" : "PreDefault"
 		}

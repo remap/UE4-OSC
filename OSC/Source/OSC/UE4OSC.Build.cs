@@ -1,8 +1,8 @@
 namespace UnrealBuildTool.Rules
 {
-	public class OSC : ModuleRules
+	public class UE4OSC : ModuleRules
 	{
-		public OSC(ReadOnlyTargetRules Target) : base(Target)
+		public UE4OSC(ReadOnlyTargetRules Target) : base(Target)
         {
             PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
             PrivatePCHHeaderFile = "Private/OscPrivatePCH.h";

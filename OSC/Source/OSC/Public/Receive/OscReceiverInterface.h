@@ -4,7 +4,7 @@
 
 
 /// Base class to receive OSC messages.
-struct OSC_API IOscReceiverInterface
+struct UE4OSC_API IOscReceiverInterface
 {
     virtual ~IOscReceiverInterface()  {}
     virtual const FString & GetAddressFilter() const = 0;
@@ -17,7 +17,7 @@ template <class T>
 #if PLATFORM_WINDOWS
 struct BasicOscReceiver : IOscReceiverInterface
 #else
-struct OSC_API BasicOscReceiver : IOscReceiverInterface
+struct UE4OSC_API BasicOscReceiver : IOscReceiverInterface
 #endif
 {
     T * const _impl;
