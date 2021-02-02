@@ -10,7 +10,7 @@ AOscReceiverActor::AOscReceiverActor()
     {
         instance->RegisterReceiver(&_listener);
 
-        UE_LOG(LogOSC, Verbose, TEXT("Registering actor %s"), *GetName());
+        UE_LOG(LogUE4OSC, Verbose, TEXT("Registering actor %s"), *GetName());
     }
 }
 
@@ -27,7 +27,7 @@ void AOscReceiverActor::BeginDestroy()
     {
         instance->UnregisterReceiver(&_listener);
 
-        UE_LOG(LogOSC, Verbose, TEXT("Unregistering actor %s"), *GetName());
+        UE_LOG(LogUE4OSC, Verbose, TEXT("Unregistering actor %s"), *GetName());
     }
 
     Super::BeginDestroy();

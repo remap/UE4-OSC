@@ -27,11 +27,11 @@ void UOscReceiverComponent::OnRegister()
 
         if(GetOwner())
         {
-            UE_LOG(LogOSC, Verbose, TEXT("Registering component %s of %s"),  *GetName(), *GetOwner()->GetName());
+            UE_LOG(LogUE4OSC, Verbose, TEXT("Registering component %s of %s"),  *GetName(), *GetOwner()->GetName());
         }
         else
         {
-            UE_LOG(LogOSC, Verbose, TEXT("Registering component %s"), *GetName());
+            UE_LOG(LogUE4OSC, Verbose, TEXT("Registering component %s"), *GetName());
         }
     }
 }
@@ -47,11 +47,11 @@ void UOscReceiverComponent::OnUnregister()
 
         if(GetOwner())
         {
-            UE_LOG(LogOSC, Verbose, TEXT("Unregistering component %s of %s"),  *GetName(), *GetOwner()->GetName());
+            UE_LOG(LogUE4OSC, Verbose, TEXT("Unregistering component %s of %s"),  *GetName(), *GetOwner()->GetName());
         }
         else
         {
-            UE_LOG(LogOSC, Verbose, TEXT("Unregistering component %s"), *GetName());
+            UE_LOG(LogUE4OSC, Verbose, TEXT("Unregistering component %s"), *GetName());
         }
     }
 
