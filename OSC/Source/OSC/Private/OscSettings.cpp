@@ -93,48 +93,48 @@ void UOscSettings::Send(const uint8 *buffer, int32 length, int32 targetIndex)
 {
     if(targetIndex == -1)
     {
-        bool error = false;
+        // bool error;// = false;
         for(const auto & address : _sendAddresses)
         {
             if(!SendImpl(_sendSocket.Get(), buffer, length, *address))
             {
                 const auto target = address->ToString(true);
                 UE_LOG(LogUE4OSC, Error, TEXT("Cannot send OSC: %s : socket cannot send data"), *target);
-                error = true;
+                // error = true;
             }
         }
 
 #if !NO_LOGGING
         // Log sent packet
-        if(!error && !LogUE4OSC.IsSuppressed(ELogVerbosity::Verbose))
-        {
-            TArray<uint8> tmp;
-            tmp.Append(buffer, length);
-            const auto encoded = FBase64::Encode(tmp);
-            UE_LOG(LogUE4OSC, Verbose, TEXT("SentAll: %s"), *encoded);
-        }
+        // if(!error && !LogUE4OSC.IsSuppressed(ELogVerbosity::Verbose))
+        // {
+        //     TArray<uint8> tmp;
+        //     tmp.Append(buffer, length);
+        //     const auto encoded = FBase64::Encode(tmp);
+        //     UE_LOG(LogUE4OSC, Verbose, TEXT("SentAll: %s"), *encoded);
+        // }
 #endif
     }
     else if(targetIndex < _sendAddresses.Num())
     {
-        bool error = false;
+        // bool error;// = false;
         if(!SendImpl(_sendSocket.Get(), buffer, length, *_sendAddresses[targetIndex]))
         {
             const auto target = _sendAddresses[targetIndex]->ToString(true);
             UE_LOG(LogUE4OSC, Error, TEXT("Cannot send OSC: %s : socket cannot send data"), *target);
-            error = true;
+            // error = true;
         }
 
 #if !NO_LOGGING
         // Log sent packet
-        if(!error && !LogUE4OSC.IsSuppressed(ELogVerbosity::Verbose))
-        {
-            TArray<uint8> tmp;
-            tmp.Append(buffer, length);
-            const auto encoded = FBase64::Encode(tmp);
-            const auto target  = _sendAddresses[targetIndex]->ToString(true);
-            UE_LOG(LogUE4OSC, Verbose, TEXT("SentTo %s: %s"), *target, *encoded);
-        }
+        // if(!error && !LogUE4OSC.IsSuppressed(ELogVerbosity::Verbose))
+        // {
+        //     TArray<uint8> tmp;
+        //     tmp.Append(buffer, length);
+        //     const auto encoded = FBase64::Encode(tmp);
+        //     const auto target  = _sendAddresses[targetIndex]->ToString(true);
+        //     UE_LOG(LogUE4OSC, Verbose, TEXT("SentTo %s: %s"), *target, *encoded);
+        // }
 #endif
     }
     else
